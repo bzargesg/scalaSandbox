@@ -44,4 +44,8 @@ object ToyProblems {
     }
 
   }
+  def minSumOfLengths(arr: Array[Int], target: Int): Int ={
+    val subarrs = arr.tails.toArray.flatMap(_.inits).map(_.sum).filter(_ == target)
+    if(subarrs.length < 2) -1 else 2
+  }
 }
