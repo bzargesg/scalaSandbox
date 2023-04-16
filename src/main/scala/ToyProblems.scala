@@ -48,4 +48,14 @@ object ToyProblems {
     val subarrs = arr.tails.toArray.flatMap(_.inits).map(_.sum).filter(_ == target)
     if(subarrs.length < 2) -1 else 2
   }
+
+  class KthLargest(_k: Int, _nums: Array[Int]) {
+    var nums = _nums.sorted
+    def add(`val`: Int): Int = {
+      val (left, right) = nums.partition(_<`val`)
+      nums = (left :+ `val`) ++ right
+      nums.reverse.zipWithIndex.find(_._2 == _k-1).map(_._1).getOrElse(-1)
+    }
+  }
+
 }

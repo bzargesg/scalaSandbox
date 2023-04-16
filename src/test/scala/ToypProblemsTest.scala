@@ -2,7 +2,7 @@ package toyproblems
 
 import org.junit.Assert
 import org.scalatest.funsuite.AnyFunSuite
-import toyproblems.ToyProblems.{SubrectangleQueries, minSumOfLengths}
+import toyproblems.ToyProblems.{KthLargest, SubrectangleQueries, minSumOfLengths}
 
 class ToypProblemsTest extends AnyFunSuite{
 
@@ -25,5 +25,14 @@ class ToypProblemsTest extends AnyFunSuite{
 //    Assert.assertEquals(ToyProblems.minSumOfLengths(Array(7,3,4,7),7), 2)
 //    Assert.assertEquals(ToyProblems.minSumOfLengths(Array(4,3,2,6,2,3,4),6), -1)
     Assert.assertEquals(ToyProblems.minSumOfLengths(Array(3,1,1,1,5,1,2,1),3), 3)
+  }
+
+  test("Kth Largest"){
+    val fixture = new KthLargest(3, Array(4,5,8,2))
+    Assert.assertEquals(fixture.add(3), 4)
+    Assert.assertEquals(fixture.add(5), 5)
+    Assert.assertEquals(fixture.add(10), 5)
+    Assert.assertEquals(fixture.add(9), 8)
+    Assert.assertEquals(fixture.add(4),8)
   }
 }
